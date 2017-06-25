@@ -2,15 +2,18 @@
     "name": "gueroverde/gateway-payment",
     "type": "library",
     "require": {
-        "guzzlehttp/guzzle": "^6.3"
+        "php": ">=7.0.0",
+        "guzzlehttp/guzzle": "^6.3",
+        "conekta/conekta-php": "^3.3"
     },
     "require-dev": {
-        "codeception/codeception": "^2.3"
+        "codeception/codeception": "^2.3",
+        "codeception/mockery-module": "*"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": "Miguel Sanchez",
+            "name": "Miguel Ángel Sanchez Palafox",
             "email": "gueroverde@gmail.com"
         }
     ],
@@ -18,7 +21,7 @@
 
         "psr-4": {
 
-            "gueroverde\\": "src/"
+            "gueroverde\\gatewayPayment\\": "src/"
 
         }
 
