@@ -21,7 +21,6 @@ class NonPresentPaymentTest extends \Codeception\Test\Unit
         $payment = Mockery::mock(gueroverde\gatewayPayment\NonPresentPayment::class);
         $payment->shouldReceive('setGateway')->once()->andThrow(\Exception::class,'Doesnt identified gateway');
         $this->expectException(\Exception::class);
-        var_dump(typeOf($payment)); exit();
         $payment->setGateway('wrong gateway','prod');
     }
 }
