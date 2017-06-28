@@ -1,5 +1,10 @@
 <?php
 
+namespace gueroverde\gatewayPayment\tests\unit;
+
+use Codeception\Util\Stub;
+use gueroverde\gatewayPayment\Exceptions\General;
+
 class NonPresentPaymentTest extends \Codeception\Test\Unit
 {
     /**
@@ -18,9 +23,9 @@ class NonPresentPaymentTest extends \Codeception\Test\Unit
     // tests
     public function testSetGatewayNonExistGateway()
     {
-        $payment = Mockery::mock(gueroverde\gatewayPayment\NonPresentPayment::class);
-        $payment->shouldReceive('setGateway')->once()->andThrow(\Exception::class,'Doesnt identified gateway');
+        $payment = Stub::make(\gueroverde\gatewayPayment\NonPresentPayment::class, []);
         $this->expectException(\Exception::class);
-        $payment->setGateway('wrong gateway','prod');
+        $this->expectExceptionMessage(General::MSGDOESNTIDENTIFIEDGATEWAY);
+        $payment->initGateway('wrong gateway');
     }
 }

@@ -25,5 +25,8 @@
 
         }
 
+    },
+    "autoload-dev": {
+        "psr-4": { "gueroverde\\gatewayPayment\\Tests\\": "tests/" }
     }
 }
