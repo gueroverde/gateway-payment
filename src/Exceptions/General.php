@@ -2,7 +2,6 @@
 
 namespace gueroverde\gatewayPayment\Exceptions;
 
-
 class General
 {
     const DOESNTIDENTIFIEDGATEWAY = 0;

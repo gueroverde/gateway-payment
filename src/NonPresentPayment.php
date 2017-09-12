@@ -14,6 +14,9 @@ use gueroverde\gatewayPayment\Services\Factory\Gateways as FactoryGateways;
  */
 class NonPresentPayment implements INonPresent
 {
+    /**
+    * @var IGateways $gateway;
+    */
     protected $gateway;
 
     protected $environment;

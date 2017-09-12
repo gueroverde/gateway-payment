@@ -2,7 +2,6 @@
 
 namespace gueroverde\gatewayPayment\Models;
 
-
 class GatewayModel
 {
     const CONEKTA = 'Conekta';
