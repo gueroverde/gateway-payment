@@ -4,8 +4,10 @@ namespace gueroverde\gatewayPayment\tests\unit;
 
 use Codeception\Util\Stub;
 use gueroverde\gatewayPayment\Exceptions\General;
+use gueroverde\gatewayPayment\Models\Gateway;
+use gueroverde\gatewayPayment\VirtualPayment;
 
-class NonPresentPaymentTest extends \Codeception\Test\Unit
+class VirtualPaymentTest extends \Codeception\Test\Unit
 {
     /**
      * @var \UnitTester
@@ -23,7 +25,8 @@ class NonPresentPaymentTest extends \Codeception\Test\Unit
     // tests
     public function testSetGatewayNonExistGateway()
     {
-        $payment = Stub::make(\gueroverde\gatewayPayment\NonPresentPayment::class, []);
+        $GatewayModel = Stub::make(Gateway::class,[]);
+        $payment = Stub::construct(VirtualPayment::class,['GatewayModel' => $GatewayModel]);
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage(General::MSGDOESNTIDENTIFIEDGATEWAY);
         $payment->initGateway('wrong gateway');

@@ -2,7 +2,7 @@
 
 namespace gueroverde\gatewayPayment\Models;
 
-class GatewayModel
+class Gateway
 {
     const CONEKTA = 'Conekta';
     const PAGOFACIL = 'PagoFacil';
@@ -10,7 +10,7 @@ class GatewayModel
     /**
      * @return array
      */
-    public static function GatewaysAllowed()
+    public function allowed()
     {
         $oClass = new \ReflectionClass(__CLASS__);
         return $oClass->getConstants();

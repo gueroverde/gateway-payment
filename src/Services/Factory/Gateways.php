@@ -18,7 +18,7 @@ class Gateways
      * @return \gueroverde\gatewayPayment\Gateways\IGateways
      * @author Miguel Ángel Sánchez Palafox <gueroverde@gmail.com>
      */
-    public static function generate(string $gateway)
+    public function generate(string $gateway)
     {
         $namespace = '\\gueroverde\\gatewayPayment\\Gateways\\';
         $className = $namespace . $gateway;

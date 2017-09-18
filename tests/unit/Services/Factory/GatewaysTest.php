@@ -4,7 +4,7 @@ namespace gueroverde\gatewayPayment\tests\unit\Services\Factory;
 
 use Codeception\Util\Stub;
 use gueroverde\gatewayPayment\Exceptions\General;
-use gueroverde\gatewayPayment\Models\GatewayModel;
+use gueroverde\gatewayPayment\Models\Gateway;
 
 class GatewaysTest extends \Codeception\Test\Unit
 {
@@ -33,14 +33,14 @@ class GatewaysTest extends \Codeception\Test\Unit
     public function testGenerateConektaInstance()
     {
         $payment = Stub::make(\gueroverde\gatewayPayment\Services\Factory\Gateways::class, []);
-        $conektaClass = $payment::generate(GatewayModel::CONEKTA);
+        $conektaClass = $payment::generate(Gateway::CONEKTA);
         $this->assertInstanceOf(\gueroverde\gatewayPayment\Gateways\Conekta::class, $conektaClass);
     }
 
     public function testGeneratePagofacilInstance()
     {
         $payment = Stub::make(\gueroverde\gatewayPayment\Services\Factory\Gateways::class, []);
-        $pagofacilClass = $payment::generate(GatewayModel::PAGOFACIL);
+        $pagofacilClass = $payment::generate(Gateway::PAGOFACIL);
         $this->assertInstanceOf(\gueroverde\gatewayPayment\Gateways\PagoFacil::class, $pagofacilClass);
     }
 }
