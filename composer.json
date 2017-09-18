@@ -4,11 +4,16 @@
     "require": {
         "php": ">=7.0.0",
         "guzzlehttp/guzzle": "^6.3",
-        "conekta/conekta-php": "^3.3"
+        "conekta/conekta-php": "^3.3",
+        "vlucas/phpdotenv": "^2.4",
+        "php-di/php-di": "^5.4"
     },
     "require-dev": {
         "codeception/codeception": "^2.3",
-        "codeception/mockery-module": "*"
+        "codeception/mockery-module": "*",
+        "squizlabs/php_codesniffer": "*",
+        "phpmd/phpmd" : "^2.6",
+        "sebastian/phpcpd": "^3.0"
     },
     "license": "MIT",
     "authors": [
@@ -25,5 +30,8 @@
 
         }
 
+    },
+    "autoload-dev": {
+        "psr-4": { "gueroverde\\gatewayPayment\\Tests\\": "tests/" }
     }
 }
