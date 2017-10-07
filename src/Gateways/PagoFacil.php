@@ -2,9 +2,9 @@
 
 namespace gueroverde\gatewayPayment\Gateways;
 
-use gueroverde\gatewayPayment\Contracts\INonPresent;
+use gueroverde\gatewayPayment\Contracts\VirtualPaymentInterface;
 
-class PagoFacil implements INonPresent, IGateways
+class PagoFacil implements VirtualPaymentInterface, IGateways
 {
 
     public function charge(array $data)

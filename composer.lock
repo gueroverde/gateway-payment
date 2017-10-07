@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7166be9ca09a02633bdee3b9a61c988a",
+    "content-hash": "8e1b75d3861cf158907ba5fa5cb7be0e",
     "packages": [
         {
             "name": "conekta/conekta-php",
@@ -265,6 +265,53 @@
                 "url"
             ],
             "time": "2017-03-20T17:10:46+00:00"
+        },
+        {
+            "name": "openpay/sdk",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/open-pay/openpay-php.git",
+                "reference": "6ec357af74453eccf94aa103f91d661277cb8cad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/open-pay/openpay-php/zipball/6ec357af74453eccf94aa103f91d661277cb8cad",
+                "reference": "6ec357af74453eccf94aa103f91d661277cb8cad",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-hash": "*",
+                "php": ">=5.2.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Openpay": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Openpay",
+                    "email": "soporte@openpay.mx",
+                    "homepage": "http://www.openpay.mx/docs/libraries.html"
+                },
+                {
+                    "name": "Federico Balderas",
+                    "email": "federico.balderas@foograde.com",
+                    "homepage": "http://foograde.com"
+                }
+            ],
+            "description": "This is a client implementing the payment services for Openpay at openpay.mx",
+            "time": "2016-06-22T18:41:51+00:00"
         },
         {
             "name": "php-di/invoker",

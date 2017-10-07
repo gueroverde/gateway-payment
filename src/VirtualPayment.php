@@ -1,8 +1,7 @@
 <?php
-
 namespace gueroverde\gatewayPayment;
 
-use gueroverde\gatewayPayment\Contracts\INonPresent;
+use gueroverde\gatewayPayment\Contracts\VirtualPaymentInterface;
 use gueroverde\gatewayPayment\Exceptions\General;
 use gueroverde\gatewayPayment\Models\Gateway;
 use gueroverde\gatewayPayment\Services\Factory\Gateways as FactoryGateways;
@@ -12,7 +11,7 @@ use gueroverde\gatewayPayment\Services\Factory\Gateways as FactoryGateways;
  * Class VirtualPayment
  * @package gueroverde\gatewayPayment
  */
-class VirtualPayment implements INonPresent
+class VirtualPayment implements VirtualPaymentInterface
 {
     /**
     * @var IGateways $gateway;
@@ -53,6 +52,5 @@ class VirtualPayment implements INonPresent
         }
 
         $this->gateway = $this->FactoryGateways->generate($gateway);
-        return true;
     }
 }

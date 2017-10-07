@@ -6,6 +6,7 @@ class Gateway
 {
     const CONEKTA = 'Conekta';
     const PAGOFACIL = 'PagoFacil';
+    const OPENPAY = 'OpenPay';
 
     /**
      * @return array
