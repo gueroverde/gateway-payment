@@ -1,6 +1,8 @@
 <?php
 namespace gueroverde\gatewayPayment;
 
+use Dotenv\Dotenv;
+
 class Payment
 {
     /**
@@ -10,14 +12,15 @@ class Payment
 
     public function __construct()
     {
-        $dotenv = new Dotenv\Dotenv(__DIR__);
+        $dotenv = new Dotenv(__DIR__);
         $dotenv->load();
-        $this->virtualPayment = new VirtualPayment();
+        $this->validateEnvironment($dotenv);
         $this->setVirtualPayment();
     }
 
     protected function setVirtualPayment()
     {
+        $this->virtualPayment = new VirtualPayment();
         $this->virtualPayment->initGateway(getenv('virtualgateway'));
     }
 
@@ -25,5 +28,10 @@ class Payment
     public function charge(array $data)
     {
         return $this->virtualPayment->charge($data);
+    }
+
+    protected function validateEnvironment(Dotenv $dotenv)
+    {
+        $dotenv->required(['virtualgateway', 'gatewayEnvironmnet']);
     }
 }

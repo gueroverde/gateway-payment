@@ -1,12 +1,12 @@
 {
     "name": "gueroverde/gateway-payment",
+    "description": "Wrapper to gateway Payment in Mexico",
     "type": "library",
     "require": {
         "php": ">=7.0.0",
         "guzzlehttp/guzzle": "^6.3",
         "conekta/conekta-php": "^3.3",
         "vlucas/phpdotenv": "^2.4",
-        "php-di/php-di": "^5.4",
         "openpay/sdk": "^1.2"
     },
     "require-dev": {

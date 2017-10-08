@@ -17,12 +17,33 @@ class PaymentTest extends \Codeception\Test\Unit
     {
     }
 
-    public function testLoadOpenPayVirtualPayment()
+    public function testLoadOpenPayEnvironmentStage()
     {
-        $dotenv = new \Dotenv\Dotenv($this->fixturesFolder,'OpenPay.env');
-        $dotenv->load();
+        $dotenv = new \Dotenv\Dotenv($this->fixturesFolder,'OpenPayStage.env');
+        $dotenv->overload();
         $this->assertSame('stage', getenv('gatewayEnvironmnet'));
         $this->assertSame('Openpay', getenv('virtualgateway')); 
+    }
+
+    public function testLoadOpenPayEnvironmentLive()
+    {
+        $dotenv = new \Dotenv\Dotenv($this->fixturesFolder,'OpenPayLive.env');
+        $dotenv->overload();
+        $this->assertSame('live', getenv('gatewayEnvironmnet'));
+        $this->assertSame('Openpay', getenv('virtualgateway')); 
+    }
+
+    public function testLoadOpenPayEnvironmentLocal()
+    {
+        $dotenv = new \Dotenv\Dotenv($this->fixturesFolder,'OpenPayLocal.env');
+        $dotenv->overload();
+        $this->assertSame('local', getenv('gatewayEnvironmnet'));
+        $this->assertSame('Openpay', getenv('virtualgateway')); 
+    }
+
+    public function testLoadOpenPayEnvironmentDontValidate()
+    {
+        
     }
 
     public function testChargeOpenPayCharge()
