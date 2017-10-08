@@ -3,10 +3,10 @@ namespace gueroverde\gatewayPayment\Contracts;
 
 /**
  * method to interactue with APis
- * Interface INonPresent
+ * Interface VirtualPaymentInterface
  * @package gueroverde\gatewayPayment\Contracts
  */
-interface INonPresent
+interface VirtualPaymentInterface
 {
     /**
      * Method to do a charge to data

@@ -43,4 +43,11 @@ class GatewaysTest extends \Codeception\Test\Unit
         $pagofacilClass = $payment::generate(Gateway::PAGOFACIL);
         $this->assertInstanceOf(\gueroverde\gatewayPayment\Gateways\PagoFacil::class, $pagofacilClass);
     }
+
+    public function testGenerateOpenPayInstance()
+    {
+        $payment = Stub::make(\gueroverde\gatewayPayment\Services\Factory\Gateways::class, []);
+        $pagofacilClass = $payment::generate(Gateway::OPENPAY);
+        $this->assertInstanceOf(\gueroverde\gatewayPayment\Gateways\Openpay::class, $pagofacilClass);
+    }
 }

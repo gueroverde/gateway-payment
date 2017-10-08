@@ -5,7 +5,8 @@ php:
 install:  
     composer install
 script:
-  -    ./vendor/bin/codecept run unit
+  -  ./vendor/bin/codecept run unit
   -  ./vendor/bin/phpcs --standard=PSR1,PSR2 ./src
   -  ./vendor/bin/phpmd ./src text codesize,unusedcode,naming,cleancode,design
   -  ./vendor/bin/phpcpd ./src
+  

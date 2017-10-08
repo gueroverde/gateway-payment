@@ -1,3 +1,4 @@
 # gateway-payment
-this is a public and no official gatewa of payment in mexico
+<img src="https://travis-ci.org/gueroverde/gateway-payment.svg?branch=master" />
+this is a public and no official gateway of payment in mexico
 Still in development
